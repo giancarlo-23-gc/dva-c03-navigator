@@ -1,0 +1,67 @@
+name: Reportar problema em uma questão
+description: Peça revisão de resposta, ambiguidade, explicação ou documentação.
+title: "[Questão] Revisão de conteúdo"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Relato público do DVA Navigator. Revise antes de enviar.
+        O aplicativo preenche apenas identificadores técnicos. Não anexe seu progresso completo, credenciais ou dados pessoais.
+  - type: input
+    id: question_id
+    attributes:
+      label: Identificador da questão
+      placeholder: dva-dev-001
+    validations:
+      required: true
+  - type: input
+    id: content_version
+    attributes:
+      label: Versão da sessão
+      description: Identifica a versão que originou a questão exibida, inclusive no histórico.
+    validations:
+      required: true
+  - type: input
+    id: app_version
+    attributes:
+      label: Versão atual do aplicativo
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domínio
+    validations:
+      required: true
+  - type: input
+    id: content_revision
+    attributes:
+      label: Revisão do conteúdo
+      description: Identificador do texto efetivamente exibido. Preenchido automaticamente quando disponível.
+    validations:
+      required: true
+  - type: dropdown
+    id: problem_type
+    attributes:
+      label: Qual é o problema?
+      options:
+        - Resposta indicada
+        - Ambiguidade no enunciado ou nas alternativas
+        - Explicação ou exemplo
+        - Conteúdo desatualizado
+        - Português ou apresentação
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: O que precisa ser revisto?
+      description: Descreva a divergência e o comportamento esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Referência oficial ou sugestão
+      description: Inclua a documentação pertinente à revisão solicitada.
